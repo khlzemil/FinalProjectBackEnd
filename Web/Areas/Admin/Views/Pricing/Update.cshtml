@@ -1,0 +1,48 @@
+﻿@using Web.Areas.Admin.ViewModels.Pricing
+@model PricingUpdateVM
+
+<form enctype="multipart/form-data" asp-action="update" asp-controller="pricing" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title" >
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SubTitle"></label>
+        <input class="form-control" asp-for="SubTitle" >
+        <span asp-validation-for="SubTitle"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Cost"></label>
+        <input class="form-control" asp-for="Cost" >
+        <span asp-validation-for="Cost"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Type"></label>
+        <input class="form-control" asp-for="Type" >
+        <span asp-validation-for="Type"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea class="form-control" asp-for="Description" ></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+   
+    <button type="submit">Update</button>
+</form>
+
+@section Scripts{
+
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Description'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}

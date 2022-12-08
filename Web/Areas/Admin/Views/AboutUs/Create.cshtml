@@ -1,0 +1,55 @@
+﻿@using Web.Areas.Admin.ViewModels.AboutUs
+@model AboutUsCreateVM
+
+<form enctype="multipart/form-data" asp-action="create" asp-controller="aboutus" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Slogan">Slogan</label>
+        <input class="form-control" asp-for="Slogan">
+        <span asp-validation-for="Slogan"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Icon">Icon</label>
+        <input class="form-control" asp-for="Icon">
+        <span asp-validation-for="Icon"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AboutUsPhotos">Doctor Photos</label>
+        <input class="form-control" asp-for="AboutUsPhotos">
+        @{
+            if (Html.ViewData.ModelState["AboutUsPhotos"] != null)
+            {
+                foreach (var error in Html.ViewData.ModelState["AboutUsPhotos"].Errors)
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            }
+        }
+    </div>
+    <button type="submit">Create</button>
+</form>
+
+@section Scripts{
+
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Description'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}

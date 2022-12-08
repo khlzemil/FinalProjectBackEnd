@@ -1,0 +1,387 @@
+﻿@using System.Web
+@using Web.ViewModels
+@model HomeIndexVM
+
+<section class="banner no-select">
+
+    @{
+        int order = 1;
+        foreach (var homeMainSlider in @Model.HomeMainSliders)
+        {
+            <div class="banner-page banner-page-@order" style="background-image: url(/images/@homeMainSlider.PhotoName);">
+                <div class="caption caption-@order" data-aos="fade-up" data-aos-duration="2000">
+                    @homeMainSlider.Title
+                </div>
+                <div class="auxilary-caption">
+                    @Html.Raw(@homeMainSlider.Description)
+                </div>
+                <div class="button">
+                    <a href="@homeMainSlider.UrlAdress">@homeMainSlider.LearnMore</a>
+                </div>
+
+            </div>
+
+            order++;
+        }
+    }
+    <div class="bullets">
+        <div class="bullet bullet-1 selected"></div>
+        <div class="bullet bullet-2"></div>
+        <div class="bullet bullet-3"></div>
+    </div>
+
+    <div class="overlay">
+    </div>
+</section>
+<!-- banner section ends -->
+<!-- vision section starts -->
+<section class="vision no-select">
+    <div class="container">
+        <div class="vision-top row  justify-content-center" data-aos="fade-up" data-aos-duration="2000">
+            <div class="col-lg-10 text-center">
+                <h2 class="sub-heading">Our vision</h2>
+                <h2 class="heading">Combining Quality Care& Modern Conveniences.</h2>
+                <span class="description">
+                    We started One Medical with the belief that clinical excellence
+                    commitment to service and
+                    a modern approach make for a truly great experience. To bring our vision to life, we
+                    listened to our patients. thoughtfully applied technology, and hired the best doctors to
+                    create a practice that is designed specifically to meet your needs.
+                </span>
+            </div>
+        </div>
+        <div class="vision-bottom row">
+            @{
+                if (@Model.OurVisions != null)
+                {
+                    foreach (var ourVision in Model.OurVisions)
+                    {
+                        <div class="col-sm-12 col-md-6 col-lg-3">
+                            <div class="item" data-aos="fade-up" data-aos-duration="2000">
+                                <img src="~/images/@ourVision.IconName" alt="" class="item-icon">
+                                <div class="item-content">
+                                    <h5 class="title">@ourVision.Title</h5>
+                                    @Html.Raw(@ourVision.Description)
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+
+        </div>
+    </div>
+</section>
+<!-- vision section ends -->
+<!-- about section starts -->
+<section class="about about-home no-select">
+    <div class="container">
+        @{
+            if (@Model.AboutUs != null)
+            {
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="about-content" data-aos="fade-up" data-aos-duration="2000">
+                            <span class="sub-heading">@Model.AboutUs.Title</span>
+                            @Html.Raw(@Model.AboutUs.Slogan)
+                            @Html.Raw(@Model.AboutUs.Description)
+                            <div class="signature">
+                                <img src="~/images/@Model.AboutUs.IconName" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="about-images text-sm-center text-md-left" data-aos="fade-up"
+                         data-aos-duration="2000">
+                            @{
+                                int orderSecond = 1;
+                                foreach (var photos in Model.AboutUs.AboutUsPhotos)
+                                {
+                                    <img src="~/images/@photos.PhotoName" class="about-image about-image-@orderSecond mt-5 mt-md-0">
+                                    orderSecond++;
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+
+            }
+            else
+            {
+                <div class="row">
+
+
+                    <div class="col-sm-12 col-md-6">
+                        <div class="about-content" data-aos="fade-up" data-aos-duration="2000">
+                            <span class="sub-heading">About Us</span>
+                            <h2 class="heading">
+                                Your Health is <br>
+                                Our <span class="defaultcolor">Primary Concern</span>
+                            </h2>
+                            <p class="about-content">
+                                We serve our communities by providing exceptional care, as we prevent illness,
+                                restore health and provide comfort to all who entrust us with their care.
+                            </p>
+                            <p class="description">
+                                Over 180 physicians in 40 diffrent specialties work together with the 2,000+ employees
+                                at Syring Medical Center to offer a full spectrum of diagnostic and treatment services
+                                for people of all ages.
+                            </p>
+                            <div class="signature">
+                                <img src="assets/images/signature.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="about-images text-sm-center text-md-left" data-aos="fade-up"
+                         data-aos-duration="2000">
+                            <img src="assets/images/about-1.jpg" class="about-image about-image-1 mt-5 mt-md-0"></img>
+                            <img src="assets/images/about-2.jpg" class="about-image about-image-2  mt-5 mt-md-0"></img>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+</section>
+<!-- about section ends -->
+<!-- department section starts -->
+<section class="department no-select">
+    <div class="container">
+        <div class="department-top row justify-content-center" data-aos="fade-up" data-aos-duration="2000">
+            <div class="col-lg-10 text-center">
+                <h2 class="sub-heading">What we do best</h2>
+                <h2 class="heading">Medical Departments</h2>
+                <span class="description">
+                    Expert physician specialists and caring clinical staff provide you
+                    with an exceptional patient care is what sets Syring Medical Center apaert health care
+                    experience.
+                </span>
+            </div>
+        </div>
+        <div class="department-center">
+            <div class="row ">
+               @await Component.InvokeAsync("Department")
+            </div>
+        </div>
+    </div>
+    <div class="department-bottom text-center">
+        <div class="button" data-aos="fade-up" data-aos-duration="2000">View All Departments</div>
+    </div>
+    </div>
+</section>
+<!-- department section ends -->
+<!-- video section starts -->
+
+
+<section class="video" style="background-image: url(/images/@Model.CoverVideo.CoverImageName)" data-aos="fade-up"
+         data-aos-duration="2000">
+    <div class="video-overlay d-flex justify-content-center align-items-center">
+        <div class="play-button d-flex justify-content-center align-items-center">
+            <i class="fas fa-caret-right triangle"></i>
+            <div class="scaling-background"></div>
+        </div>
+    </div>
+</section>
+<!-- video section ends -->
+<!-- doctors section starts -->
+<section class="doctors no-select">
+    <div class="container">
+        <div class="doctors-top row d-flex justify-content-between" data-aos="fade-up" data-aos-duration="2000">
+            <h2 class="sub-heading">Our Professional Doctor</h2>
+            <div class="doctors-top-right">
+                <span>View all members</span>
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+        <div class="doctors-bottom row ">
+            @await Component.InvokeAsync("Doctor")
+        </div>
+    </div>
+</section>
+<!-- doctors section ends -->
+<!-- why-choose section starts -->
+<section class="why-choose no-select">
+    <div class="container">
+        <div class="row">
+            <div class="why-choose-left col-lg-6" data-aos="fade-up" data-aos-duration="2000">
+                <h2 class="heading">
+                    @Html.Raw(@Model.WhyChoose.Title)
+                </h2>
+                @Html.Raw(@Model.WhyChoose.Text)
+                <ul class="checks">
+                    <ul class="checks">
+                        @Html.Raw(HttpUtility.HtmlDecode(@Model.WhyChoose.Description))
+                    </ul>
+                </ul>
+            </div>
+            <div class="why-choose-right col-lg-6 text-lg-right" data-aos="fade-up" data-aos-duration="2000">
+                <div style="background-image: url(/images/@Model.WhyChoose.PhotoName)">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- why-choose section ends -->
+<!-- count-to starts -->
+
+
+<div class="container">
+    <div class="row align-items-center count-to no-select  " data-aos="fade-up" data-aos-duration="2000">
+        @foreach (var statistic in Model.Statistics)
+        {
+            <div class=" col-12 col-md-4 col-lg-3  text-center count-item">
+                <i class="fas fa-plus count-plus"></i>
+                <p class='numscroller' data-min='1' data-max='@statistic.Count' data-delay='30' data-increment='10'></p>
+                <span class="satisfied-patients">Satisfied Patients</span>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+<!-- count-to ends -->
+<!-- latest-news section starts -->
+<section class="latest-news no-select">
+    <div class="container">
+        <div class="latest-news-top row d-flex justify-content-between align-items-center" data-aos="fade-up"
+             data-aos-duration="2000">
+            <h2 class="heading">Lastest News</h2>
+        </div>
+        <div class="latest-news-bottom" data-aos="fade-up" data-aos-duration="2000">
+            <div class="news-item">
+                <div class="item-photo">
+                    <img src="assets/images/news-photo-1.jpg" alt="">
+                </div>
+                <div class="date-type  text-center">
+                    <span class="date">April 3, 2019</span>
+                    <span class="type">| Cancer</span>
+                </div>
+                <div class="item-text text-center">
+                    How Some Cancer Patients May Be Able to Avoid Hair Loss
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="item-photo">
+                    <img src="assets/images/news-photo-2.jpg" alt="">
+                </div>
+                <div class="date-type text-center">
+                    <span class="date">April 3, 2019</span>
+                    <span class="type">| Cancer</span>
+                </div>
+                <div class="item-text text-center">
+                    How Some Cancer Patients May Be Able to Avoid Hair Loss
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="item-photo">
+                    <img src="assets/images/news-photo-3.jpg" alt="">
+                </div>
+                <div class="date-type text-center">
+                    <span class="date">April 3, 2019</span>
+                    <span class="type">| Cancer</span>
+                </div>
+                <div class="item-text text-center">
+                    How Some Cancer Patients May Be Able to Avoid Hair Loss
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="item-photo">
+                    <img src="assets/images/news-photo-4.jpg" alt="">
+                </div>
+                <div class="date-type text-center">
+                    <span class="date">April 3, 2019</span>
+                    <span class="type">| Cancer</span>
+                </div>
+                <div class="item-text text-center">
+                    How Some Cancer Patients May Be Able to Avoid Hair Loss
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="item-photo">
+                    <img src="assets/images/news-photo-5.jpg" alt="">
+                </div>
+                <div class="date-type text-center">
+                    <span class="date">April 3, 2019</span>
+                    <span class="type">| Cancer</span>
+                </div>
+                <div class="item-text text-center">
+                    How Some Cancer Patients May Be Able to Avoid Hair Loss
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="item-photo">
+                    <img src="assets/images/news-photo-6.jpg" alt="">
+                </div>
+                <div class="date-type text-center">
+                    <span class="date">April 3, 2019</span>
+                    <span class="type">| Cancer</span>
+                </div>
+                <div class="item-text text-center">
+                    How Some Cancer Patients May Be Able to Avoid Hair Loss
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="item-photo">
+                    <img src="assets/images/news-photo-7.jpg" alt="">
+                </div>
+                <div class="date-type text-center">
+                    <span class="date">April 3, 2019</span>
+                    <span class="type">| Cancer</span>
+                </div>
+                <div class="item-text text-center">
+                    How Some Cancer Patients May Be Able to Avoid Hair Loss
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="item-photo">
+                    <img src="assets/images/news-photo-8.jpg" alt="">
+                </div>
+                <div class="date-type text-center">
+                    <span class="date">April 3, 2019</span>
+                    <span class="type">| Cancer</span>
+                </div>
+                <div class="item-text text-center">
+                    How Some Cancer Patients May Be Able to Avoid Hair Loss
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="item-photo">
+                    <img src="assets/images/news-photo-9.jpg" alt="">
+                </div>
+                <div class="date-type text-center">
+                    <span class="date">April 3, 2019</span>
+                    <span class="type">| Cancer</span>
+                </div>
+                <div class="item-text text-center">
+                    How Some Cancer Patients May Be Able to Avoid Hair Loss
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="item-photo">
+                    <img src="assets/images/news-photo-10.jpg" alt="">
+                </div>
+                <div class="date-type text-center">
+                    <span class="date">April 3, 2019</span>
+                    <span class="type">| Cancer</span>
+                </div>
+                <div class="item-text text-center">
+                    How Some Cancer Patients May Be Able to Avoid Hair Loss
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="modal">
+    <div class="container">
+        <div class="quit-button d-flex justify-content-end"><i class="fas fa-times quit-x"></i></div>
+        <div class="modal-content">
+            <iframe class="modal-video" width="auto" height="600" src="@Model.CoverVideo.Url" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>

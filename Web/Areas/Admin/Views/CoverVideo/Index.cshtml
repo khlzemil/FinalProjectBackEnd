@@ -1,0 +1,57 @@
+﻿@using Web.Areas.Admin.ViewModels.CoverVideo
+@model CoverVideoIndexVM
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">About us</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            @if (@Model.CoverVideo != null)
+            {
+                <table class="table table-bordered mt-3" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cover Photo</th>
+                            <th>Url</th>
+                            <th>Created at</th>
+                            <th>Modified at</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cover Photo</th>
+                            <th>Url</th>
+                            <th>Created at</th>
+                            <th>Modified at</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+
+                            <td>@Model.CoverVideo.Id</td>
+                            <td><img src="~/images/@Model.CoverVideo.CoverImageName" style="width:100px; height:100px" /></td>
+                            <td>@Model.CoverVideo.Url</td>
+                            <td>@Model.CoverVideo.CreatedAt</td>
+                            <td>@Model.CoverVideo.ModifiedAt</td>
+                            <td>
+                                <a class="btn btn-primary" asp-action="update" asp-controller="covervideo" asp-route-id="@Model.CoverVideo.Id">Update</a>
+                                <form method="post" class="btn btn-danger btn-icon-split" asp-action="delete" asp-controller="covervideo" asp-route-id="@Model.CoverVideo.Id">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <a class="btn btn-primary" asp-action="create" asp-controller="covervideo">Create</a>
+            }
+        </div>
+    </div>
+</div>

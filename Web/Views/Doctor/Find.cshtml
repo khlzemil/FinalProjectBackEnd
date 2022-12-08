@@ -1,0 +1,129 @@
+﻿@using Web.ViewModels
+@model DoctorIndexVM
+
+
+<!-- main-frame section starts -->
+<section class="main-frame-2 no-select" style="background-image: url(/assets/images/doctor-page-title.jpg);">
+    <div class="container">
+        <div class="row main-frame-2-title align-items-center">
+            <div class="col-md-6 main-frame-2-title-text">Find A Doctor</div>
+            <div class="col-md-6 text-md-right main-frame-2-title-breadcrumb">Home / Find A Doctor</div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</section>
+<!-- main-frame section ends -->
+<!-- find-doctor section starts -->
+<section class="find-doctor no-select">
+    <div class="section-left-color"></div>
+    <div class="section-right-color"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-lg-4 find-doctor-left">
+                <div class="search-doctor">
+                    <p class="search-doctor-title">
+                        Find the Doctor
+                    </p>
+                    <span class="line"></span>
+                    <div class="search-doctor-content">
+                        <div class="search-doctor-content-wrapper">
+                            <form method="get" asp-action="find" asp-controller="doctor">
+                                <label asp-for="Name"></label>
+                                <input type="search" asp-for="Name" placeholder="Enter doctor name" class="search-doctor-input" />
+                            </form>
+
+                            <div class="button search-button text-center">Search Now</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-lg-8 find-doctor-right">
+                <p class="associated-doctor-title">
+                    Associated Doctors in Syring.
+                </p>
+                <p class="associated-description">
+                    Expert physician specialists and caring clinical staff provide you with an exceptional
+                    patient care is what sets Syring Medical Center apaert health care experience.
+                </p>
+                <div class="doctor-items">
+
+                    @foreach (var doctor in Model.Doctors)
+                    {
+                        <div class="doctor-item">
+                            <div class="doctor-item-wrapper d-flex">
+                                <div class="doctor-img">
+                                    <img src="~/images/@doctor.PhotoName" alt="">
+                                </div>
+                                <div class="doctor-info">
+                                    <div class="doctor-name">@doctor.Name @doctor.Surname</div>
+                                    <div class="doctor-subtitle">
+                                        @Html.Raw(@doctor.Bio)
+                                    </div>
+                                    <div class="doctor-skill">
+                                        @Html.Raw(@doctor.Summary)
+                                    </div>
+                                    <div class="view-appointment d-flex">
+                                        <div class="view">
+                                            <a href="doctor-single.html">View Profile</a>
+                                            <span class="line"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                    <div class="pagination d-flex">
+                        @if (Model.Page > 1)
+                        {
+                            {
+                                var prevPage = @Model.Page - 1;
+
+                                <a itemprop="url" asp-action="find" asp-controller="doctor" asp-route-page="@prevPage">
+                                    <div class="pagination-element">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                                        </svg>
+                                    </div>
+                                </a>
+
+                            }
+
+                        }
+
+                        @for (int i = 1; i <= Model.PageCount; i++)
+                        {
+
+
+                            <li class="mkdf-pag-number">
+                                <div class="pagination-element pagination-active"><a asp-action="find" asp-controller="doctor" asp-route-page="@i" class="@(Model.Page==i ? "mkdf-pag-active disabled" : "mkdf-pag-inactive")">@i</a></div>
+
+                            </li>
+
+                        }
+
+                        @if (Model.PageCount != Model.Page)
+                        {
+                            {
+                                var prevPage = @Model.Page + 1;
+
+                                <a itemprop="url" asp-action="find" asp-controller="doctor" asp-route-page="@prevPage">
+                                    <div class="pagination-element">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                        </svg>
+                                    </div>
+                                </a>
+                            }
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- find-doctor section ends -->

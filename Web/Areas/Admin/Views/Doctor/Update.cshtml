@@ -1,0 +1,120 @@
+﻿@using Core.Constants
+@using Web.Areas.Admin.ViewModels.Doctor
+@model DoctorUpdateVM
+
+<form enctype="multipart/form-data" asp-action="update" asp-controller="doctor" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input class="form-control" asp-for="Name"/>
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Surname">Surname</label>
+        <input class="form-control" asp-for="Surname"/>
+        <span asp-validation-for="Surname"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Profession"></label>
+        <select asp-for="@Model.Profession" asp-items="Html.GetEnumSelectList<Profession>()"></select>
+        <span asp-validation-for="Profession"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Bio">Bio</label>
+        <textarea class="form-control" asp-for="Bio"></textarea>
+        <span asp-validation-for="Bio"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Summary">Summary</label>
+        <textarea class="form-control" asp-for="Summary"></textarea>
+        <span asp-validation-for="Summary"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Skills">Skills</label>
+        <textarea class="form-control" asp-for="Skills"></textarea>
+        <span asp-validation-for="Skills"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone">Phone</label>
+        <input class="form-control" asp-for="Phone" />
+        <span asp-validation-for="Phone"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Photo">Photo</label>
+        <input class="form-control" asp-for="Photo">
+        <span asp-validation-for="Photo"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MondayToFridayStartDate">Monday To Friday Start Date</label>
+        <input  class="form-control" asp-for="MondayToFridayStartDate" />
+        <span asp-validation-for="MondayToFridayStartDate"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MondayToFridayEndDate">Monday To Friday End Date</label>
+        <input class="form-control" asp-for="MondayToFridayEndDate" />
+        <span asp-validation-for="MondayToFridayEndDate"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SaturdayStart">Saturday Start</label>
+        <input class="form-control" asp-for="SaturdayStart" />
+        <span asp-validation-for="SaturdayStart"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SaturdayEnd">Saturday End</label>
+        <input class="form-control" asp-for="SaturdayEnd" />
+        <span asp-validation-for="SaturdayEnd"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IsWorkingSunday">Is Working Sunday</label>
+        <input class="form-check-input" asp-for="IsWorkingSunday" />
+        <span asp-validation-for="IsWorkingSunday"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IsShowHomePage">Is Show Home Page</label>
+        <input class="form-check-input" asp-for="IsShowHomePage" />
+        <span asp-validation-for="IsShowHomePage"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Facebook">Facebook</label>
+        <input class="form-control" asp-for="Facebook" />
+        <span asp-validation-for="Facebook"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Twitter">Twitter</label>
+        <input class="form-control" asp-for="Twitter" />
+        <span asp-validation-for="Twitter"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Linkedin">Linkedin</label>
+        <input class="form-control" asp-for="Linkedin" />
+        <span asp-validation-for="Linkedin"></span>
+    </div>
+
+
+    <button type="submit">Update</button>
+</form>
+
+@section Scripts{
+
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
+    <script>
+        const properties = ["Summary", "Bio", "Skills"];
+        properties.forEach(function myFunction(element) {
+
+            ClassicEditor
+                .create(document.querySelector(`#${element}`))
+                .then(editor => {
+                    console.log(editor);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        })
+
+    </script>
+}

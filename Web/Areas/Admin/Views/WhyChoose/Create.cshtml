@@ -1,0 +1,48 @@
+﻿@using Web.Areas.Admin.ViewModels.WhyChoose
+@model WhyChooseCreateVM
+
+<form enctype="multipart/form-data" asp-action="create" asp-controller="whychoose" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Text"></label>
+        <textarea class="form-control" asp-for="Text"></textarea>
+        <span asp-validation-for="Text"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Photo">Photo</label>
+        <input class="form-control" asp-for="Photo">
+        <span asp-validation-for="Photo"></span>
+    </div>
+
+    <button type="submit">Create</button>
+</form>
+
+@section Scripts{
+
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
+    <script>
+        const properties = ["Description", "Text"];
+        properties.forEach(function myFunction(element) {
+
+            ClassicEditor
+                .create(document.querySelector(`#${element}`))
+                .then(editor => {
+                    console.log(editor);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        })
+
+    </script>
+}

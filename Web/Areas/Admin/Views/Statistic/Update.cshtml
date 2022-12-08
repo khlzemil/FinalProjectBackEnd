@@ -1,0 +1,32 @@
+﻿@using Web.Areas.Admin.ViewModels.Statistic
+@model StatisticUpdateVM
+
+<form enctype="multipart/form-data" asp-action="update" asp-controller="statistic" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+   <div class="form-group">
+        <label asp-for="Count"></label>
+        <input class="form-control" asp-for="Count" />
+        <span asp-validation-for="Count"></span>
+    </div>
+    <button type="submit">Update</button>
+</form>
+
+@section Scripts{
+
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Title'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}

@@ -1,0 +1,91 @@
+﻿@using Web.Areas.Admin.ViewModels.Doctor
+@model DoctorIndexVM
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Doctors</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            @if (@Model.Doctors != null)
+            {
+                <a class="btn btn-primary" asp-action="create" asp-controller="doctor">Create</a>
+                <table class="table table-bordered mt-3" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Profession</th>
+                            <th>Bio</th>
+                            <th>Summary</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Photo</th>
+                            <th>Skills</th>
+                            <th>Facebook</th>
+                            <th>Twitter</th>
+                            <th>Linkedin</th>
+                            <th>Created at</th>
+                            <th>Modified at</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Profession</th>
+                            <th>Bio</th>
+                            <th>Summary</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Photo</th>
+                            <th>Skills</th>
+                            <th>Facebook</th>
+                            <th>Twitter</th>
+                            <th>Linkedin</th>
+                            <th>Created at</th>
+                            <th>Modified at</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var question in Model.Doctors)
+                        {
+                            <tr>
+
+                                <td>@question.Id</td>
+                                <td>@question.Name</td>
+                                <td>@question.Surname</td>
+                                <td>@question.Profession</td>
+                                <td>@question.Bio</td>
+                                <td>@question.Summary</td>
+                                <td>@question.Phone</td>
+                                <td>@question.Email</td>
+                                <td><img style="width:100px; height:100px" src="/images/@question.PhotoName"></td>
+                                <td>@question.Skills</td>
+                                <td>@question.Facebook</td>
+                                <td>@question.Twitter</td>
+                                <td>@question.Linkedin</td>
+                                <td>@question.CreatedAt</td>
+                                <td>@question.ModifiedAt</td>
+                                <td>
+                                    <a class="btn btn-primary" asp-action="update" asp-controller="doctor" asp-route-id="@question.Id">Update</a>
+                                    <form method="post" class="btn btn-danger btn-icon-split" asp-action="delete" asp-controller="doctor" asp-route-id="@question.Id">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <a class="btn btn-primary" asp-action="create" asp-controller="doctor">Create</a>
+            }
+        </div>
+    </div>
+</div>

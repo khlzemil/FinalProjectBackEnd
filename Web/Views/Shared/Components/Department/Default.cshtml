@@ -1,0 +1,16 @@
+﻿@using System.Web
+@using Web.ViewModels
+@model DepartmentIndexVM
+
+@foreach (var department in Model.Departments)
+{
+    <div class="col-sm-12 col-lg-4">
+        <div class="item" data-aos="fade-up" data-aos-duration="2000">
+            <img src="~/images/@department.IconName" alt="" class="item-icon">
+            <div class="item-content">
+                <h5 class="title">@department.Title</h5>
+                @Html.Raw(HttpUtility.HtmlDecode(@department.Description))
+            </div>
+        </div>
+    </div>
+}

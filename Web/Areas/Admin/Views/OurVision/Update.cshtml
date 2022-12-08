@@ -1,0 +1,38 @@
+﻿@using Web.Areas.Admin.ViewModels.OurVision
+@model OurVisionUpdateVM
+
+<form enctype="multipart/form-data" asp-action="update" asp-controller="ourvision" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Icon">Icon</label>
+        <input class="form-control" asp-for="Icon">
+        <span asp-validation-for="Icon"></span>
+    </div>
+
+    <button type="submit">Update</button>
+</form>
+
+@section Scripts{
+
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Description'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}

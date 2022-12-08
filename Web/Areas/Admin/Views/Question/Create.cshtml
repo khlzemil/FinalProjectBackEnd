@@ -1,0 +1,36 @@
+﻿@using Web.Areas.Admin.ViewModels.Question
+@model QuestionCreateVM
+
+<form enctype="multipart/form-data" asp-action="create" asp-controller="question" method="post">
+    <div class="form-group">
+        <label asp-for="Problem"></label>
+        <textarea class="form-control" asp-for="Problem"></textarea>
+        <span asp-validation-for="Problem"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Solve">Solve</label>
+        <textarea class="form-control" asp-for="Solve"></textarea>
+        <span asp-validation-for="Solve"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="QuestionTopicId">Question topic</label>
+        <select class="form-select" asp-for="QuestionTopicId" asp-items="Model.QuestionTopics"></select>
+        <span asp-validation-for="QuestionTopicId"></span>
+    </div>
+    <button type="submit">Create</button>
+</form>
+
+@section Scripts{
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Problem'))
+            .then(editor => {
+                console.log(editor);
+            })//
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}

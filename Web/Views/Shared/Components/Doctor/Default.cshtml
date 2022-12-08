@@ -1,0 +1,27 @@
+﻿@using Web.ViewModels
+@model DoctorIndexVM
+
+@foreach (var doctor in Model.Doctors)
+{
+    <div class="col-sm-12 col-md-6 col-lg-3  text-center" data-aos="fade-up" data-aos-duration="2000">
+        <div class="doctor-item">
+            <img src="~/images/@doctor.PhotoName" alt="">
+            <div class="doctor-info">
+                <h4 class="doctor-name">@doctor.Name  @doctor.Surname</h4>
+                <p class="doctor-speciality">@doctor.Profession</p>
+                <div class="social-media">
+                    <a href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}

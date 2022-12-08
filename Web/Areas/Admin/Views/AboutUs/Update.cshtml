@@ -1,0 +1,92 @@
+﻿@using Web.Areas.Admin.ViewModels.AboutUs
+@model AboutUsUpdateVM
+
+<form enctype="multipart/form-data" asp-action="update" asp-controller="aboutus" method="post">
+
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input class="form-control" asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Slogan">Slogan</label>
+        <input class="form-control" asp-for="Slogan">
+        <span asp-validation-for="Slogan"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <textarea class="form-control" asp-for="Description"></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Icon">Icon</label>
+        <input class="form-control" asp-for="Icon">
+        <span asp-validation-for="Icon"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Photos">Doctor Photos</label>
+        <input class="form-control" asp-for="Photos">
+        @{
+            if (Html.ViewData.ModelState["Photos"] != null)
+            {
+                foreach (var error in Html.ViewData.ModelState["Photos"].Errors)
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            }
+        }
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4">Update</button>
+
+
+</form>
+
+<div class="table-responsive mt-3">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Photo</th>
+                <th>Order</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var photo in Model.AboutUsPhotos)
+            {
+                <tr>
+                    <td>@photo.Id</td>
+                    <td><img class="rounded" style="width:100px ; height:100px; object-fit:cover" src="~/images/@photo.PhotoName" /></td>
+                    <td>@photo.Order</td>
+                    <td>
+                        <a class="btn btn-primary " asp-action="updatephoto" asp-controller="aboutus" asp-route-id=@photo.Id>Update</a>
+                        <form asp-action="deletephoto" asp-controller="aboutus" asp-route-id="@photo.Id" asp-route-aboutUsId="@photo.AboutUsId"  method="post">
+                            <button class="btn btn-primary btn-danger " onclick="confirm('Are you sure?')" >Delete</button>
+                        </form>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section Scripts{
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.2.1/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Description'))
+            .then(editor => {
+                console.log(editor);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}
+
+
+
+

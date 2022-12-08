@@ -1,0 +1,61 @@
+﻿@using Web.Areas.Admin.ViewModels.QuestionTopic
+@model QuestionTopicIndexVM
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">About us</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            @if (@Model.QuestionTopics != null)
+            {
+                <a class="btn btn-primary" asp-action="create" asp-controller="questiontopic">Create</a>
+                <table class="table table-bordered mt-3" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Created at</th>
+                            <th>Modified at</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Created at</th>
+                            <th>Modified at</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var questionTopic in Model.QuestionTopics)
+                        {
+                            <tr>
+
+                                <td>@questionTopic.Id</td>
+                                <td>@questionTopic.Title</td>
+                                <td>@questionTopic.Description</td>
+                                <td>@questionTopic.CreatedAt</td>
+                                <td>@questionTopic.ModifiedAt</td>
+                                <td>
+                                    <a class="btn btn-primary" asp-action="update" asp-controller="questiontopic" asp-route-id="@questionTopic.Id">Update</a>
+                                    <form method="post" class="btn btn-danger btn-icon-split" asp-action="delete" asp-controller="questiontopic" asp-route-id="@questionTopic.Id">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <a class="btn btn-primary" asp-action="create" asp-controller="questiontopic">Create</a>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+﻿@using System.Web
+@using Web.ViewModels
+@model FAQLoadQuestionIndexVM
+@foreach (var question in Model.Questions)
+{
+    <li data-aos="fade-up" data-aos-duration="2000">
+        <span>@Html.Raw(@question.Problem)</span>
+        <div>
+            @question.Solve
+        </div>
+    </li>
+}
