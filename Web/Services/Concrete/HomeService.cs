@@ -15,15 +15,18 @@ namespace Web.Services.Concrete
         private readonly ICoverVideoRepository _coverVideoRepository;
         private readonly IWhyChooseRepository _whyChooseRepository;
         private readonly IStatisticRepository _statisticRepository;
+        private readonly INewsRepository _newsRepository;
 
         public HomeService(IAboutUsRepository aboutUsRepository,
                             IOurVisionRepository ourVisionRepository, 
                             IHomeMainSliderRepository homeMainSliderRepository,
                             ICoverVideoRepository coverVideoRepository,
                             IWhyChooseRepository whyChooseRepository,
-                            IStatisticRepository statisticRepository)
+                            IStatisticRepository statisticRepository,
+                            INewsRepository newsRepository)
         {
             _statisticRepository = statisticRepository;
+            _newsRepository = newsRepository;
             _aboutUsRepository = aboutUsRepository;
             _ourVisionRepository = ourVisionRepository;
             _homeMainSliderRepository = homeMainSliderRepository;
@@ -41,6 +44,7 @@ namespace Web.Services.Concrete
                 CoverVideo = await _coverVideoRepository.GetAsync(),
                 WhyChoose = await _whyChooseRepository.GetAsync(),
                 Statistics = await _statisticRepository.GetAllAsync(),
+                News = await _newsRepository.GetOrderByAsync()
             };
             return model;
         }

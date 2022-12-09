@@ -1,0 +1,67 @@
+﻿@using Web.Areas.Admin.ViewModels.News
+@model NewsIndexVM
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">About us</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            @if (@Model.News != null)
+            {
+                <a class="btn btn-primary" asp-action="create" asp-controller="news">Create</a>
+                <table class="table table-bordered mt-3" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Text</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">CreateAt</th>
+                            <th scope="col">ModifiedAt</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Text</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">CreateAt</th>
+                            <th scope="col">ModifiedAt</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @foreach (var lastestNew in Model.News)
+                        {
+                            <tr>
+                                <td>@lastestNew.Id</td>
+                                <td>@lastestNew.Title</td>
+                                <td>@lastestNew.Text</td>
+                                <td>@lastestNew.Time.ToShortDateString()</td>
+                                <td>@lastestNew.CreatedAt.ToShortDateString()</td>
+                                <td>@lastestNew.ModifiedAt.ToShortDateString()</td>
+                                <td><img class="img-thumbnail" style="width:50px ; height:50px; object-fit:cover" src="~/images/@lastestNew.PhotoName" /></td>
+
+                                <td>
+                                    <a class="btn btn-primary" asp-action="update" asp-controller="news" asp-route-id="@lastestNew.Id">Update</a>
+                                    <form method="post" asp-action="delete" asp-controller="news" asp-route-id="@lastestNew.Id">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <a class="btn btn-primary" asp-action="create" asp-controller="news">Create</a>
+            }
+        </div>
+    </div>
+</div>

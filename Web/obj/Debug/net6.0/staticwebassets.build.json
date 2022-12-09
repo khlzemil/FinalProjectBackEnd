@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BGyJBphTUzPW019gXfMQzdTZZJWbF2kPV+vInG6/Llc=",
+  "Hash": "hE88CxQfLzdA9qe2cuG63mZIT98ou6msijGYuB/PXHg=",
   "Source": "Web",
   "BasePath": "_content/Web",
   "Mode": "Default",
@@ -34306,6 +34306,23 @@
       "OriginalItemSpec": "wwwroot\\images\\06792cd1-5c55-4846-90b8-fde78a7e5878_why-choose-photo.jpg"
     },
     {
+      "Identity": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\images\\0a51c7fc-d084-4d71-8883-9a110199f1aa_product-3.jpg",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "images/0a51c7fc-d084-4d71-8883-9a110199f1aa_product-3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\0a51c7fc-d084-4d71-8883-9a110199f1aa_product-3.jpg"
+    },
+    {
       "Identity": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\images\\107f2f02-cc0c-42f2-8604-642974c4d36a_why-choose-photo.jpg",
       "SourceId": "Web",
       "SourceType": "Discovered",
@@ -34833,6 +34850,40 @@
       "OriginalItemSpec": "wwwroot\\images\\7641f1da-9a4d-4500-9fd9-de323d61de8d_ticket-flight.png"
     },
     {
+      "Identity": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\images\\7836b1dd-97a2-48b7-a0db-4c976bfadff7_product-1.jpg",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "images/7836b1dd-97a2-48b7-a0db-4c976bfadff7_product-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\7836b1dd-97a2-48b7-a0db-4c976bfadff7_product-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\images\\7b88fac8-9e8e-4306-b6ef-73723ddc76dd_avatar-1.jpg",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "images/7b88fac8-9e8e-4306-b6ef-73723ddc76dd_avatar-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\7b88fac8-9e8e-4306-b6ef-73723ddc76dd_avatar-1.jpg"
+    },
+    {
       "Identity": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\images\\81a828e6-1dea-43c9-9766-7dbfd12cc2b7_sql-server.png",
       "SourceId": "Web",
       "SourceType": "Discovered",
@@ -34916,6 +34967,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\8b11c405-7e0f-456c-9dd7-a1850c7773da_signature.png"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\images\\8d3e3b05-4d9f-4674-b34b-76f42d7637f8_avatar-2.jpg",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "images/8d3e3b05-4d9f-4674-b34b-76f42d7637f8_avatar-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\8d3e3b05-4d9f-4674-b34b-76f42d7637f8_avatar-2.jpg"
     },
     {
       "Identity": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\images\\9070c711-2e99-467b-b458-c7d7df426dc3_why-choose-photo.jpg",
@@ -35190,6 +35258,23 @@
       "OriginalItemSpec": "wwwroot\\images\\bc0185c5-6fa6-4143-bd36-0a669be082e6_icons8-pro-display-xdr-48.png"
     },
     {
+      "Identity": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\images\\bccb00f9-3b09-42e8-abab-63f4b20f57f3_product-6.jpg",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "images/bccb00f9-3b09-42e8-abab-63f4b20f57f3_product-6.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\bccb00f9-3b09-42e8-abab-63f4b20f57f3_product-6.jpg"
+    },
+    {
       "Identity": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\images\\be9718d2-de1e-49e6-a0c9-d9a7e976e70e_signature.png",
       "SourceId": "Web",
       "SourceType": "Discovered",
@@ -35375,6 +35460,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\f1372e60-9145-4e73-85c7-ddc7956280ca_nurse.png"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\images\\fabd8690-fb76-42fc-aaf0-3030ddf02eca_avatar-3.jpg",
+      "SourceId": "Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\",
+      "BasePath": "_content/Web",
+      "RelativePath": "images/fabd8690-fb76-42fc-aaf0-3030ddf02eca_avatar-3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\fabd8690-fb76-42fc-aaf0-3030ddf02eca_avatar-3.jpg"
     },
     {
       "Identity": "C:\\Users\\hp\\Desktop\\Syring\\Web\\wwwroot\\images\\fb99bfbc-af09-4980-a459-7b7ac0dd79dc_ticket-flight.png",

@@ -27,5 +27,6 @@ namespace DataAccess.Contexts
         public DbSet<QuestionTopic> QuestionTopics { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Department> Departments{ get; set; }
+        public DbSet<News> News{ get; set; }
     }
 }

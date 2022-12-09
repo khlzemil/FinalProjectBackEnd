@@ -52,6 +52,7 @@ builder.Services.AddScoped<IStatisticRepository, StatisticRepository>();
 builder.Services.AddScoped<IPricingRepository, PricingRepository>();
 builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
 builder.Services.AddScoped<IProductCategoryRepository, ProductCategoryRepository>();
+builder.Services.AddScoped<INewsRepository, NewsRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IQuestionTopicRepository, QuestionTopicRepository>();
 builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
@@ -79,6 +80,7 @@ builder.Services.AddScoped<AdminAbstractService.IProductCategoryService, AdminCo
 builder.Services.AddScoped<AdminAbstractService.IProductService, AdminConcreteService.ProductService>();
 builder.Services.AddScoped<IQuestionService, QuestionService>();
 builder.Services.AddScoped<IFAQService, FAQService>();
+builder.Services.AddScoped<INewsService, NewsService>();
 builder.Services.AddScoped<AdminAbstractService.IDepartmentService, AdminConcreteService.DepartmentService>();
 builder.Services.AddScoped<AbstractService.IDepartmentService, ConcreteService.DepartmentService>();
 builder.Services.AddScoped<AdminAbstractService.IDoctorService, AdminConcreteService.DoctorService>();

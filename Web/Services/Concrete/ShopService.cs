@@ -3,11 +3,12 @@ using DataAccess.Repositories.Abstract;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
+using Web.Services.Abstract;
 using Web.ViewModels.Product;
 
 namespace Web.Services.Concrete
 {
-    public class ShopService
+    public class ShopService : IShopService
     {
         private readonly ModelStateDictionary _modelState;
         private readonly IProductRepository _productRepository;

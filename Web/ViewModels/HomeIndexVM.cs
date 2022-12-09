@@ -10,6 +10,7 @@ namespace Web.ViewModels
         public List<Doctor> Doctors { get; set; }
         public List<HomeMainSlider> HomeMainSliders{ get; set; }
         public List<Statistic> Statistics{ get; set; }
+        public List<Core.Entities.News> News { get; set; }
         public WhyChoose WhyChoose { get; set; }
     }
 }

@@ -20,7 +20,6 @@
                 </div>
 
             </div>
-
             order++;
         }
     }
@@ -162,7 +161,7 @@
         </div>
         <div class="department-center">
             <div class="row ">
-               @await Component.InvokeAsync("Department")
+                @await Component.InvokeAsync("Department")
             </div>
         </div>
     </div>
@@ -251,126 +250,21 @@
             <h2 class="heading">Lastest News</h2>
         </div>
         <div class="latest-news-bottom" data-aos="fade-up" data-aos-duration="2000">
-            <div class="news-item">
-                <div class="item-photo">
-                    <img src="assets/images/news-photo-1.jpg" alt="">
+            @foreach (var news in Model.News)
+            {
+                <div class="news-item">
+                    <div class="item-photo">
+                        <img src="~/images/@news.PhotoName" alt="">
+                    </div>
+                    <div class="date-type  text-center">
+                        <span class="date">@news.Time</span>
+                        <span class="type">@news.Text</span>
+                    </div>
+                    <div class="item-text text-center">
+                        @news.Title
+                    </div>
                 </div>
-                <div class="date-type  text-center">
-                    <span class="date">April 3, 2019</span>
-                    <span class="type">| Cancer</span>
-                </div>
-                <div class="item-text text-center">
-                    How Some Cancer Patients May Be Able to Avoid Hair Loss
-                </div>
-            </div>
-            <div class="news-item">
-                <div class="item-photo">
-                    <img src="assets/images/news-photo-2.jpg" alt="">
-                </div>
-                <div class="date-type text-center">
-                    <span class="date">April 3, 2019</span>
-                    <span class="type">| Cancer</span>
-                </div>
-                <div class="item-text text-center">
-                    How Some Cancer Patients May Be Able to Avoid Hair Loss
-                </div>
-            </div>
-            <div class="news-item">
-                <div class="item-photo">
-                    <img src="assets/images/news-photo-3.jpg" alt="">
-                </div>
-                <div class="date-type text-center">
-                    <span class="date">April 3, 2019</span>
-                    <span class="type">| Cancer</span>
-                </div>
-                <div class="item-text text-center">
-                    How Some Cancer Patients May Be Able to Avoid Hair Loss
-                </div>
-            </div>
-            <div class="news-item">
-                <div class="item-photo">
-                    <img src="assets/images/news-photo-4.jpg" alt="">
-                </div>
-                <div class="date-type text-center">
-                    <span class="date">April 3, 2019</span>
-                    <span class="type">| Cancer</span>
-                </div>
-                <div class="item-text text-center">
-                    How Some Cancer Patients May Be Able to Avoid Hair Loss
-                </div>
-            </div>
-            <div class="news-item">
-                <div class="item-photo">
-                    <img src="assets/images/news-photo-5.jpg" alt="">
-                </div>
-                <div class="date-type text-center">
-                    <span class="date">April 3, 2019</span>
-                    <span class="type">| Cancer</span>
-                </div>
-                <div class="item-text text-center">
-                    How Some Cancer Patients May Be Able to Avoid Hair Loss
-                </div>
-            </div>
-            <div class="news-item">
-                <div class="item-photo">
-                    <img src="assets/images/news-photo-6.jpg" alt="">
-                </div>
-                <div class="date-type text-center">
-                    <span class="date">April 3, 2019</span>
-                    <span class="type">| Cancer</span>
-                </div>
-                <div class="item-text text-center">
-                    How Some Cancer Patients May Be Able to Avoid Hair Loss
-                </div>
-            </div>
-            <div class="news-item">
-                <div class="item-photo">
-                    <img src="assets/images/news-photo-7.jpg" alt="">
-                </div>
-                <div class="date-type text-center">
-                    <span class="date">April 3, 2019</span>
-                    <span class="type">| Cancer</span>
-                </div>
-                <div class="item-text text-center">
-                    How Some Cancer Patients May Be Able to Avoid Hair Loss
-                </div>
-            </div>
-            <div class="news-item">
-                <div class="item-photo">
-                    <img src="assets/images/news-photo-8.jpg" alt="">
-                </div>
-                <div class="date-type text-center">
-                    <span class="date">April 3, 2019</span>
-                    <span class="type">| Cancer</span>
-                </div>
-                <div class="item-text text-center">
-                    How Some Cancer Patients May Be Able to Avoid Hair Loss
-                </div>
-            </div>
-            <div class="news-item">
-                <div class="item-photo">
-                    <img src="assets/images/news-photo-9.jpg" alt="">
-                </div>
-                <div class="date-type text-center">
-                    <span class="date">April 3, 2019</span>
-                    <span class="type">| Cancer</span>
-                </div>
-                <div class="item-text text-center">
-                    How Some Cancer Patients May Be Able to Avoid Hair Loss
-                </div>
-            </div>
-            <div class="news-item">
-                <div class="item-photo">
-                    <img src="assets/images/news-photo-10.jpg" alt="">
-                </div>
-                <div class="date-type text-center">
-                    <span class="date">April 3, 2019</span>
-                    <span class="type">| Cancer</span>
-                </div>
-                <div class="item-text text-center">
-                    How Some Cancer Patients May Be Able to Avoid Hair Loss
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section>
